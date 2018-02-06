@@ -2,25 +2,18 @@
 <html>
   <head>
     <title>@yield('title', '这个位置是标题内容')-YYYY</title>
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script type="text/javascript " src="js/app.js" ></script>
   </head>
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
+      @include('layouts._header')
+
+
       <div class="container">
         <div class="col-md-offset-1 col-md-10">
-          <a href="/" id="logo">Sample App</a>
-          <nav>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="/help">帮助</a></li>
-              <li><a href="#">登录</a></li>
-            </ul>
-          </nav>
+          @yield('content')
+          @include('layouts._footer')
         </div>
       </div>
-    </header>
-
-    <div class="container">
-      @yield('content')
-    </div>
   </body>
 </html>
